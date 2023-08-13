@@ -1,6 +1,8 @@
 #include "../../include/server/chat_server.hpp"
 #include <iostream>
 #include <functional>
+#include <string>
+#include <jsoncpp/json/json.h>
 
 using namespace std;
 using namespace placeholders;
@@ -20,9 +22,9 @@ void ChatServer::start() { server_.start(); }
 
 void ChatServer::onConnection(const TcpConnectionPtr &conn)
 {
-    if (conn->connected())
+    if (!conn->connected())
     {
-        std::cout << "connected from " << conn->getTcpInfoString();
+        conn->shutdown();
     }
 }
 
@@ -30,9 +32,8 @@ void ChatServer::onMessage(const TcpConnectionPtr &conn,
                            Buffer *message_string,
                            Timestamp time)
 {
-    std::string str = message_string->retrieveAllAsString();
-
-    std::cout << "server receive:" << str << std::endl;
-
-    conn->send(str);
+    std::string message = message_string->retrieveAllAsString();
+    Json::Reader reader;
+    Json::Value message_value;
+    reader.parse(message, message_value);
 }

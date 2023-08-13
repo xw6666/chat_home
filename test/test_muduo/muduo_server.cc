@@ -63,12 +63,14 @@ private:
 
 int main() {
   EventLoop loop;
-  sockaddr_in local;
-  local.sin_addr.s_addr = INADDR_ANY;
-  local.sin_port = htons(8088);
-  local.sin_family = AF_INET;
-  InetAddress addr(local);
+  // sockaddr_in local;
+  // local.sin_addr.s_addr = INADDR_ANY;
+  // local.sin_port = htons(8088);
+  // local.sin_family = AF_INET;
+  // InetAddress addr(local);
+  InetAddress addr("127.0.0.1", 8088);
   ChatServer server(&loop, addr, "ChatServer");
+
 
   server.start();
   loop.loop(); // epoll_wait以阻塞的方式等待用户连接到来和读写事件到来
