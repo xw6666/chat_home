@@ -4,7 +4,7 @@
 # compile CXX with /opt/rh/devtoolset-7/root/usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/wjr/chat_home/include -I/home/wjr/chat_home/include/server
+CXX_INCLUDES = -I/home/wjr/chat_home/include -I/home/wjr/chat_home/include/server -I/home/wjr/chat_home/include/server/db
 
 CXX_FLAGS = -g -std=gnu++11
 

@@ -1,4 +1,6 @@
 #include "../../include/server/chat_server.hpp"
+#include "../../include/server/char_service.hpp"
+#include "../../include/public.hpp"
 #include <iostream>
 #include <functional>
 #include <string>
@@ -36,4 +38,8 @@ void ChatServer::onMessage(const TcpConnectionPtr &conn,
     Json::Reader reader;
     Json::Value message_value;
     reader.parse(message, message_value);
+    Msgid msg_id = message_value["msg_id"].asInt();
+    ChatService *server_ins = ChatService::getInstance();
+    auto msg_handler = server_ins->getHandler(msg_id);
+    msg_handler(conn, message_value, time);
 }

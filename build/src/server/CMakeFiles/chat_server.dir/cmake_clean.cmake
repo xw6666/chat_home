@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "/home/wjr/chat_home/bin/chat_server"
   "/home/wjr/chat_home/bin/chat_server.pdb"
+  "CMakeFiles/chat_server.dir/char_service.cc.o"
+  "CMakeFiles/chat_server.dir/char_service.cc.o.d"
   "CMakeFiles/chat_server.dir/chat_server.cc.o"
   "CMakeFiles/chat_server.dir/chat_server.cc.o.d"
   "CMakeFiles/chat_server.dir/main.cc.o"
