@@ -1,7 +1,0 @@
-/home/wjr/chat_home/build/CMakeFiles/edit_cache.dir
-/home/wjr/chat_home/build/CMakeFiles/rebuild_cache.dir
-/home/wjr/chat_home/build/src/CMakeFiles/edit_cache.dir
-/home/wjr/chat_home/build/src/CMakeFiles/rebuild_cache.dir
-/home/wjr/chat_home/build/src/server/CMakeFiles/chat_server.dir
-/home/wjr/chat_home/build/src/server/CMakeFiles/edit_cache.dir
-/home/wjr/chat_home/build/src/server/CMakeFiles/rebuild_cache.dir

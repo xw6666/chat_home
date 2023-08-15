@@ -2,15 +2,7 @@
 
 #include <mysql/mysql.h>
 #include <string>
-#include <muduo/base/Logging.h>
 
-using namespace std;
-
-// 数据库配置信息
-static string server = "127.0.0.1";
-static string user = "root";
-static string password = "AaSs779319!";
-static string dbname = "chat_home";
 // 数据库操作类
 class MySQL
 {
@@ -23,9 +15,11 @@ public:
     bool connect();
 
     // 更新操作
-    bool update(const string &sql);
+    bool update(const std::string &sql);
     // 查询操作
-    MYSQL_RES *query(const string &sql);
+    MYSQL_RES *query(const std::string &sql);
+
+    MYSQL *getConn();
 
 private:
     MYSQL *_conn;
