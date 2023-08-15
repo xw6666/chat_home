@@ -1,4 +1,15 @@
 #include "../../../include/server/db/db.hpp"
+#include <string>
+#include <muduo/base/Logging.h>
+
+using namespace std;
+using namespace muduo;
+
+// 数据库配置信息
+static string server = "127.0.0.1";
+static string user = "root";
+static string password = "AaSs779319!";
+static string dbname = "chat_home";
 
 MySQL::MySQL()
 {
@@ -19,6 +30,9 @@ bool MySQL::connect()
     {
         mysql_query(_conn, "set names gbk");
     }
+    else
+        LOG_ERROR << "Connect MySQL error!";
+
     return p;
 }
 
@@ -42,4 +56,9 @@ MYSQL_RES *MySQL::query(const string &sql)
         return nullptr;
     }
     return mysql_use_result(_conn);
+}
+
+MYSQL *MySQL::getConn()
+{
+    return _conn;
 }
