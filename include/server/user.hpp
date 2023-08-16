@@ -15,10 +15,10 @@ public:
     void setPasswd(const std::string &passwd) { passwd_ = passwd; }
     void setState(const std::string &state) { state_ = state; }
 
-    int getID() { return id_; }
-    std::string getName() { return name_; }
-    std::string getPasswd() { return passwd_; }
-    std::string getState() { return state_; }
+    int getID() const { return id_; }
+    std::string getName() const { return name_; }
+    std::string getPasswd() const { return passwd_; }
+    std::string getState() const { return state_; }
 
 private:
     int id_;

@@ -24,3 +24,44 @@ bool UserModel::insert(User &user)
 
     return false;
 }
+
+void UserModel::query(int id, User *user)
+{
+    char sql[1024] = {0};
+    sprintf(sql, "select * from user where id = %d;", id);
+
+    MySQL mysql;
+    if (mysql.connect())
+    {
+        MYSQL_RES *res = mysql.query(sql);
+        if (res)
+        {
+            MYSQL_ROW row = mysql_fetch_row(res);
+            if (row)
+            {
+                user->setID(id);
+                user->setName(row[1]);
+                user->setPasswd(row[2]);
+                user->setState(row[3]);
+            }
+        }
+    }
+}
+
+bool UserModel::updateState(const User &user)
+{
+    char sql[1024] = {0};
+    sprintf(sql, "update user set state = '%s' where id = %d;", user.getState().c_str(), user.getID());
+
+    MySQL mysql;
+    if (mysql.connect())
+    {
+        if (mysql.update(sql))
+        {
+            return true;
+        }
+        return false;
+    }
+
+    return false;
+}

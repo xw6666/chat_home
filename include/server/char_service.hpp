@@ -1,5 +1,6 @@
 #pragma once
 
+#include "./user_model.hpp"
 #include <muduo/net/TcpServer.h>
 #include <functional>
 #include <jsoncpp/json/json.h>
@@ -27,6 +28,9 @@ private:
 
     // 通过id可以调用需要处理的业务函数
     std::unordered_map<Msgid, MsgHandler> msg_handler_set_;
+
+    // 通过此类查询User数据库表
+    UserModel user_model_;
 
     // 单例指针
     static ChatService *ins_;

@@ -2,19 +2,14 @@ src/server/CMakeFiles/chat_server.dir/char_service.cc.o: \
  /home/wjr/chat_home/src/server/char_service.cc \
  /usr/include/stdc-predef.h \
  /home/wjr/chat_home/src/server/../../include/server/char_service.hpp \
- /usr/local/include/muduo/net/TcpServer.h \
- /usr/local/include/muduo/base/Atomic.h \
- /usr/local/include/muduo/base/noncopyable.h \
- /opt/rh/devtoolset-7/root/usr/lib/gcc/x86_64-redhat-linux/7/include/stdint.h \
- /usr/include/stdint.h /usr/include/features.h /usr/include/sys/cdefs.h \
- /usr/include/bits/wordsize.h /usr/include/gnu/stubs.h \
- /usr/include/gnu/stubs-64.h /usr/include/bits/wchar.h \
- /usr/local/include/muduo/base/Types.h /usr/include/string.h \
- /opt/rh/devtoolset-7/root/usr/lib/gcc/x86_64-redhat-linux/7/include/stddef.h \
- /usr/include/xlocale.h \
+ /home/wjr/chat_home/src/server/../../include/server/./user_model.hpp \
+ /home/wjr/chat_home/src/server/../../include/server/./user.hpp \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/string \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/x86_64-redhat-linux/bits/c++config.h \
+ /usr/include/bits/wordsize.h \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/x86_64-redhat-linux/bits/os_defines.h \
+ /usr/include/features.h /usr/include/sys/cdefs.h \
+ /usr/include/gnu/stubs.h /usr/include/gnu/stubs-64.h \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/x86_64-redhat-linux/bits/cpu_defines.h \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/stringfwd.h \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/memoryfwd.h \
@@ -40,7 +35,12 @@ src/server/CMakeFiles/chat_server.dir/char_service.cc.o: \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/cwchar /usr/include/wchar.h \
  /usr/include/stdio.h \
  /opt/rh/devtoolset-7/root/usr/lib/gcc/x86_64-redhat-linux/7/include/stdarg.h \
+ /usr/include/bits/wchar.h \
+ /opt/rh/devtoolset-7/root/usr/lib/gcc/x86_64-redhat-linux/7/include/stddef.h \
+ /usr/include/xlocale.h \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/cstdint \
+ /opt/rh/devtoolset-7/root/usr/lib/gcc/x86_64-redhat-linux/7/include/stdint.h \
+ /usr/include/stdint.h \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/allocator.h \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/x86_64-redhat-linux/bits/c++allocator.h \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/ext/new_allocator.h \
@@ -95,6 +95,10 @@ src/server/CMakeFiles/chat_server.dir/char_service.cc.o: \
  /usr/include/asm-generic/errno-base.h \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/functional_hash.h \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/basic_string.tcc \
+ /usr/local/include/muduo/net/TcpServer.h \
+ /usr/local/include/muduo/base/Atomic.h \
+ /usr/local/include/muduo/base/noncopyable.h \
+ /usr/local/include/muduo/base/Types.h /usr/include/string.h \
  /usr/include/assert.h /usr/local/include/muduo/net/TcpConnection.h \
  /usr/local/include/muduo/base/StringPiece.h \
  /usr/local/include/muduo/net/Callbacks.h \
@@ -271,7 +275,5 @@ src/server/CMakeFiles/chat_server.dir/char_service.cc.o: \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/parse_numbers.h \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/std_mutex.h \
  /home/wjr/chat_home/src/server/../../include/public.hpp \
- /home/wjr/chat_home/src/server/../../include/server/user_model.hpp \
- /home/wjr/chat_home/src/server/../../include/server/user.hpp \
  /usr/local/include/muduo/base/Logging.h \
  /usr/local/include/muduo/base/LogStream.h

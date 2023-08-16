@@ -3,9 +3,9 @@
 
 src/server/CMakeFiles/chat_server.dir/char_service.cc.o: /home/wjr/chat_home/src/server/char_service.cc \
   /home/wjr/chat_home/include/public.hpp \
-  /home/wjr/chat_home/include/server/char_service.hpp \
   /home/wjr/chat_home/include/server/user.hpp \
   /home/wjr/chat_home/include/server/user_model.hpp \
+  /home/wjr/chat_home/include/server/char_service.hpp \
   /opt/rh/devtoolset-7/root/usr/include/c++/7/algorithm \
   /opt/rh/devtoolset-7/root/usr/include/c++/7/array \
   /opt/rh/devtoolset-7/root/usr/include/c++/7/backward/auto_ptr.h \
@@ -323,6 +323,8 @@ src/server/CMakeFiles/chat_server.dir/char_service.cc.o: /home/wjr/chat_home/src
 
 src/server/CMakeFiles/chat_server.dir/chat_server.cc.o: /home/wjr/chat_home/src/server/chat_server.cc \
   /home/wjr/chat_home/include/public.hpp \
+  /home/wjr/chat_home/include/server/user.hpp \
+  /home/wjr/chat_home/include/server/user_model.hpp \
   /home/wjr/chat_home/include/server/char_service.hpp \
   /home/wjr/chat_home/include/server/chat_server.hpp \
   /opt/rh/devtoolset-7/root/usr/include/c++/7/algorithm \
@@ -1594,10 +1596,6 @@ src/server/CMakeFiles/chat_server.dir/user_model.cc.o: /home/wjr/chat_home/src/s
 
 /usr/include/bits/sigset.h:
 
-/opt/rh/devtoolset-7/root/usr/include/c++/7/streambuf:
-
-/opt/rh/devtoolset-7/root/usr/include/c++/7/backward/auto_ptr.h:
-
 /opt/rh/devtoolset-7/root/usr/include/c++/7/chrono:
 
 /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/unordered_map.h:
@@ -1607,6 +1605,10 @@ src/server/CMakeFiles/chat_server.dir/user_model.cc.o: /home/wjr/chat_home/src/s
 /usr/include/boost/preprocessor/control/if.hpp:
 
 /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/algorithmfwd.h:
+
+/opt/rh/devtoolset-7/root/usr/include/c++/7/streambuf:
+
+/opt/rh/devtoolset-7/root/usr/include/c++/7/backward/auto_ptr.h:
 
 /usr/include/bits/byteswap.h:
 

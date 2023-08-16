@@ -48,6 +48,54 @@ MsgHandler ChatService::getHandler(Msgid msg_id)
 void ChatService::login(const TcpConnectionPtr &conn, Json::Value &message_value, Timestamp time)
 {
     LOG_INFO << "do login service.";
+    int id = message_value["id"].asInt();
+    std::string passwd = message_value["passwd"].asString();
+    LOG_INFO << "id:" << id << " "
+             << "passwd:" << passwd;
+
+    Json::Value result_value; // 传给客户端的json value
+    Json::FastWriter writer;
+    result_value["msg_id"] = LOG_ACK;
+    User user;
+    user_model_.query(id, &user);
+    if (user.getID() == -1)
+    {
+        // 查询失败
+        result_value["errno"] = 2;
+    }
+    else if (user.getID() == id && user.getPasswd() == passwd)
+    {
+        // 用户账号密码正确但是已经在线
+        if (user.getState() == "online")
+        {
+            result_value["errno"] = 2;
+        }
+        else
+        {
+            // 登录成功，将状态改为online
+            user.setState("online");
+            if (user_model_.updateState(user))
+            {
+                // 修改状态成功
+                result_value["id"] = id;
+                result_value["name"] = user.getName();
+                result_value["errno"] = 0;
+            }
+            else
+            {
+                // 内部错误
+                result_value["errno"] = 3;
+            }
+        }
+    }
+    else
+    {
+        // 用户名或密码错误
+        result_value["errno"] = 2;
+    }
+
+    std::string out_json = writer.write(result_value);
+    conn->send(out_json);
 }
 
 void ChatService::regis(const TcpConnectionPtr &conn, Json::Value &message_value, Timestamp time)
@@ -59,6 +107,7 @@ void ChatService::regis(const TcpConnectionPtr &conn, Json::Value &message_value
              << "passwd:" << passwd;
     Json::Value result_value; // 传给客户端的json value
     Json::FastWriter writer;
+    result_value["msg_id"] = REGIS_ACK;
     if (name == "" || passwd == "")
     {
         result_value["errno"] = 1;
@@ -67,13 +116,11 @@ void ChatService::regis(const TcpConnectionPtr &conn, Json::Value &message_value
         return;
     }
 
-    UserModel user_model;
     User user;
     user.setName(name);
-    user.setPasswd(passwd);
-    bool status = user_model.insert(user);
+    user.setPasswd(passwd); // UserModel user_model;
+    bool status = user_model_.insert(user);
 
-    result_value["msg_id"] = REGIS_ACK;
     if (status)
     {
         result_value["errno"] = 0;
@@ -85,7 +132,6 @@ void ChatService::regis(const TcpConnectionPtr &conn, Json::Value &message_value
     }
 
     std::string out_json = writer.write(result_value);
-
     conn->send(out_json);
 }
 
