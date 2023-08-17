@@ -130,30 +130,6 @@ chat_server/fast:
 	cd /home/wjr/chat_home/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/chat_server.dir/build.make src/server/CMakeFiles/chat_server.dir/build
 .PHONY : chat_server/fast
 
-char_service.o: char_service.cc.o
-.PHONY : char_service.o
-
-# target to build an object file
-char_service.cc.o:
-	cd /home/wjr/chat_home/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/chat_server.dir/build.make src/server/CMakeFiles/chat_server.dir/char_service.cc.o
-.PHONY : char_service.cc.o
-
-char_service.i: char_service.cc.i
-.PHONY : char_service.i
-
-# target to preprocess a source file
-char_service.cc.i:
-	cd /home/wjr/chat_home/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/chat_server.dir/build.make src/server/CMakeFiles/chat_server.dir/char_service.cc.i
-.PHONY : char_service.cc.i
-
-char_service.s: char_service.cc.s
-.PHONY : char_service.s
-
-# target to generate assembly for a file
-char_service.cc.s:
-	cd /home/wjr/chat_home/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/chat_server.dir/build.make src/server/CMakeFiles/chat_server.dir/char_service.cc.s
-.PHONY : char_service.cc.s
-
 chat_server.o: chat_server.cc.o
 .PHONY : chat_server.o
 
@@ -177,6 +153,30 @@ chat_server.s: chat_server.cc.s
 chat_server.cc.s:
 	cd /home/wjr/chat_home/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/chat_server.dir/build.make src/server/CMakeFiles/chat_server.dir/chat_server.cc.s
 .PHONY : chat_server.cc.s
+
+chat_service.o: chat_service.cc.o
+.PHONY : chat_service.o
+
+# target to build an object file
+chat_service.cc.o:
+	cd /home/wjr/chat_home/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/chat_server.dir/build.make src/server/CMakeFiles/chat_server.dir/chat_service.cc.o
+.PHONY : chat_service.cc.o
+
+chat_service.i: chat_service.cc.i
+.PHONY : chat_service.i
+
+# target to preprocess a source file
+chat_service.cc.i:
+	cd /home/wjr/chat_home/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/chat_server.dir/build.make src/server/CMakeFiles/chat_server.dir/chat_service.cc.i
+.PHONY : chat_service.cc.i
+
+chat_service.s: chat_service.cc.s
+.PHONY : chat_service.s
+
+# target to generate assembly for a file
+chat_service.cc.s:
+	cd /home/wjr/chat_home/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/chat_server.dir/build.make src/server/CMakeFiles/chat_server.dir/chat_service.cc.s
+.PHONY : chat_service.cc.s
 
 db/db.o: db/db.cc.o
 .PHONY : db/db.o
@@ -259,12 +259,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... chat_server"
-	@echo "... char_service.o"
-	@echo "... char_service.i"
-	@echo "... char_service.s"
 	@echo "... chat_server.o"
 	@echo "... chat_server.i"
 	@echo "... chat_server.s"
+	@echo "... chat_service.o"
+	@echo "... chat_service.i"
+	@echo "... chat_service.s"
 	@echo "... db/db.o"
 	@echo "... db/db.i"
 	@echo "... db/db.s"

@@ -83,24 +83,10 @@ src/server/CMakeFiles/chat_server.dir/db/db.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chat_server.dir/db/db.cc.s"
 	cd /home/wjr/chat_home/build/src/server && /opt/rh/devtoolset-7/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wjr/chat_home/src/server/db/db.cc -o CMakeFiles/chat_server.dir/db/db.cc.s
 
-src/server/CMakeFiles/chat_server.dir/char_service.cc.o: src/server/CMakeFiles/chat_server.dir/flags.make
-src/server/CMakeFiles/chat_server.dir/char_service.cc.o: /home/wjr/chat_home/src/server/char_service.cc
-src/server/CMakeFiles/chat_server.dir/char_service.cc.o: src/server/CMakeFiles/chat_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wjr/chat_home/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/server/CMakeFiles/chat_server.dir/char_service.cc.o"
-	cd /home/wjr/chat_home/build/src/server && /opt/rh/devtoolset-7/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/server/CMakeFiles/chat_server.dir/char_service.cc.o -MF CMakeFiles/chat_server.dir/char_service.cc.o.d -o CMakeFiles/chat_server.dir/char_service.cc.o -c /home/wjr/chat_home/src/server/char_service.cc
-
-src/server/CMakeFiles/chat_server.dir/char_service.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/chat_server.dir/char_service.cc.i"
-	cd /home/wjr/chat_home/build/src/server && /opt/rh/devtoolset-7/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wjr/chat_home/src/server/char_service.cc > CMakeFiles/chat_server.dir/char_service.cc.i
-
-src/server/CMakeFiles/chat_server.dir/char_service.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chat_server.dir/char_service.cc.s"
-	cd /home/wjr/chat_home/build/src/server && /opt/rh/devtoolset-7/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wjr/chat_home/src/server/char_service.cc -o CMakeFiles/chat_server.dir/char_service.cc.s
-
 src/server/CMakeFiles/chat_server.dir/chat_server.cc.o: src/server/CMakeFiles/chat_server.dir/flags.make
 src/server/CMakeFiles/chat_server.dir/chat_server.cc.o: /home/wjr/chat_home/src/server/chat_server.cc
 src/server/CMakeFiles/chat_server.dir/chat_server.cc.o: src/server/CMakeFiles/chat_server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wjr/chat_home/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/server/CMakeFiles/chat_server.dir/chat_server.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wjr/chat_home/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/server/CMakeFiles/chat_server.dir/chat_server.cc.o"
 	cd /home/wjr/chat_home/build/src/server && /opt/rh/devtoolset-7/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/server/CMakeFiles/chat_server.dir/chat_server.cc.o -MF CMakeFiles/chat_server.dir/chat_server.cc.o.d -o CMakeFiles/chat_server.dir/chat_server.cc.o -c /home/wjr/chat_home/src/server/chat_server.cc
 
 src/server/CMakeFiles/chat_server.dir/chat_server.cc.i: cmake_force
@@ -110,6 +96,20 @@ src/server/CMakeFiles/chat_server.dir/chat_server.cc.i: cmake_force
 src/server/CMakeFiles/chat_server.dir/chat_server.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chat_server.dir/chat_server.cc.s"
 	cd /home/wjr/chat_home/build/src/server && /opt/rh/devtoolset-7/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wjr/chat_home/src/server/chat_server.cc -o CMakeFiles/chat_server.dir/chat_server.cc.s
+
+src/server/CMakeFiles/chat_server.dir/chat_service.cc.o: src/server/CMakeFiles/chat_server.dir/flags.make
+src/server/CMakeFiles/chat_server.dir/chat_service.cc.o: /home/wjr/chat_home/src/server/chat_service.cc
+src/server/CMakeFiles/chat_server.dir/chat_service.cc.o: src/server/CMakeFiles/chat_server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/wjr/chat_home/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/server/CMakeFiles/chat_server.dir/chat_service.cc.o"
+	cd /home/wjr/chat_home/build/src/server && /opt/rh/devtoolset-7/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/server/CMakeFiles/chat_server.dir/chat_service.cc.o -MF CMakeFiles/chat_server.dir/chat_service.cc.o.d -o CMakeFiles/chat_server.dir/chat_service.cc.o -c /home/wjr/chat_home/src/server/chat_service.cc
+
+src/server/CMakeFiles/chat_server.dir/chat_service.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/chat_server.dir/chat_service.cc.i"
+	cd /home/wjr/chat_home/build/src/server && /opt/rh/devtoolset-7/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/wjr/chat_home/src/server/chat_service.cc > CMakeFiles/chat_server.dir/chat_service.cc.i
+
+src/server/CMakeFiles/chat_server.dir/chat_service.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/chat_server.dir/chat_service.cc.s"
+	cd /home/wjr/chat_home/build/src/server && /opt/rh/devtoolset-7/root/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/wjr/chat_home/src/server/chat_service.cc -o CMakeFiles/chat_server.dir/chat_service.cc.s
 
 src/server/CMakeFiles/chat_server.dir/main.cc.o: src/server/CMakeFiles/chat_server.dir/flags.make
 src/server/CMakeFiles/chat_server.dir/main.cc.o: /home/wjr/chat_home/src/server/main.cc
@@ -142,8 +142,8 @@ src/server/CMakeFiles/chat_server.dir/user_model.cc.s: cmake_force
 # Object files for target chat_server
 chat_server_OBJECTS = \
 "CMakeFiles/chat_server.dir/db/db.cc.o" \
-"CMakeFiles/chat_server.dir/char_service.cc.o" \
 "CMakeFiles/chat_server.dir/chat_server.cc.o" \
+"CMakeFiles/chat_server.dir/chat_service.cc.o" \
 "CMakeFiles/chat_server.dir/main.cc.o" \
 "CMakeFiles/chat_server.dir/user_model.cc.o"
 
@@ -151,8 +151,8 @@ chat_server_OBJECTS = \
 chat_server_EXTERNAL_OBJECTS =
 
 /home/wjr/chat_home/bin/chat_server: src/server/CMakeFiles/chat_server.dir/db/db.cc.o
-/home/wjr/chat_home/bin/chat_server: src/server/CMakeFiles/chat_server.dir/char_service.cc.o
 /home/wjr/chat_home/bin/chat_server: src/server/CMakeFiles/chat_server.dir/chat_server.cc.o
+/home/wjr/chat_home/bin/chat_server: src/server/CMakeFiles/chat_server.dir/chat_service.cc.o
 /home/wjr/chat_home/bin/chat_server: src/server/CMakeFiles/chat_server.dir/main.cc.o
 /home/wjr/chat_home/bin/chat_server: src/server/CMakeFiles/chat_server.dir/user_model.cc.o
 /home/wjr/chat_home/bin/chat_server: src/server/CMakeFiles/chat_server.dir/build.make
