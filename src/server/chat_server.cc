@@ -1,5 +1,5 @@
 #include "../../include/server/chat_server.hpp"
-#include "../../include/server/char_service.hpp"
+#include "../../include/server/chat_service.hpp"
 #include "../../include/public.hpp"
 #include <iostream>
 #include <functional>
@@ -26,6 +26,8 @@ void ChatServer::onConnection(const TcpConnectionPtr &conn)
 {
     if (!conn->connected())
     {
+        // 处理客户端退出
+        ChatService::getInstance()->clientClose(conn);
         conn->shutdown();
     }
 }

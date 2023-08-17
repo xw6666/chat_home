@@ -254,7 +254,7 @@ src/server/CMakeFiles/chat_server.dir/chat_server.cc.o: \
  /usr/local/include/muduo/base/Mutex.h \
  /usr/local/include/muduo/base/CurrentThread.h \
  /usr/local/include/muduo/net/TimerId.h \
- /home/wjr/chat_home/src/server/../../include/server/char_service.hpp \
+ /home/wjr/chat_home/src/server/../../include/server/chat_service.hpp \
  /home/wjr/chat_home/src/server/../../include/server/./user_model.hpp \
  /home/wjr/chat_home/src/server/../../include/server/./user.hpp \
  /usr/include/jsoncpp/json/json.h /usr/include/jsoncpp/json/autolink.h \
