@@ -44,6 +44,7 @@ void UserModel::query(int id, User *user)
                 user->setPasswd(row[2]);
                 user->setState(row[3]);
             }
+            mysql_free_result(res);
         }
     }
 }
