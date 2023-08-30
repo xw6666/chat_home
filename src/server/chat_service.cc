@@ -265,4 +265,15 @@ void ChatService::oneChat(const TcpConnectionPtr &conn, Json::Value &message_val
     }
 }
 
+void ChatService::reset()
+{
+    // 操作数据库，将所有用户状态修改为offline
+    UserModel user_model;
+    bool check = user_model.resetState();
+    if (check)
+    {
+        LOG_INFO << "User state reset success.";
+    }
+}
+
 ChatService *ChatService::ins_ = nullptr;

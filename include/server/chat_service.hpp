@@ -21,6 +21,8 @@ public:
 
     // 处理客户端退出时的函数
     void clientClose(const TcpConnectionPtr &conn);
+    // 处理服务器退出时的状态设置
+    void reset();
 
 private:
     ChatService();

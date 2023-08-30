@@ -253,4 +253,31 @@ src/server/CMakeFiles/chat_server.dir/main.cc.o: \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/atomic \
  /usr/local/include/muduo/base/Mutex.h \
  /usr/local/include/muduo/base/CurrentThread.h \
- /usr/local/include/muduo/net/TimerId.h
+ /usr/local/include/muduo/net/TimerId.h \
+ /home/wjr/chat_home/include/server/chat_service.hpp \
+ /home/wjr/chat_home/include/server/./user_model.hpp \
+ /home/wjr/chat_home/include/server/./user.hpp \
+ /usr/include/jsoncpp/json/json.h /usr/include/jsoncpp/json/autolink.h \
+ /usr/include/jsoncpp/json/config.h /usr/include/jsoncpp/json/value.h \
+ /usr/include/jsoncpp/json/forwards.h /usr/include/jsoncpp/json/reader.h \
+ /usr/include/jsoncpp/json/features.h \
+ /opt/rh/devtoolset-7/root/usr/include/c++/7/deque \
+ /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/stl_deque.h \
+ /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/deque.tcc \
+ /opt/rh/devtoolset-7/root/usr/include/c++/7/stack \
+ /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/stl_stack.h \
+ /usr/include/jsoncpp/json/writer.h \
+ /opt/rh/devtoolset-7/root/usr/include/c++/7/unordered_map \
+ /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/hashtable.h \
+ /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/hashtable_policy.h \
+ /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/unordered_map.h \
+ /opt/rh/devtoolset-7/root/usr/include/c++/7/mutex \
+ /opt/rh/devtoolset-7/root/usr/include/c++/7/chrono \
+ /opt/rh/devtoolset-7/root/usr/include/c++/7/ratio \
+ /opt/rh/devtoolset-7/root/usr/include/c++/7/ctime \
+ /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/parse_numbers.h \
+ /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/std_mutex.h \
+ /usr/include/signal.h /usr/include/bits/signum.h \
+ /usr/include/bits/siginfo.h /usr/include/bits/sigaction.h \
+ /usr/include/bits/sigcontext.h /usr/include/bits/sigstack.h \
+ /usr/include/sys/ucontext.h /usr/include/bits/sigthread.h
