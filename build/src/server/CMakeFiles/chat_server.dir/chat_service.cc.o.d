@@ -275,5 +275,6 @@ src/server/CMakeFiles/chat_server.dir/chat_service.cc.o: \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/parse_numbers.h \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/std_mutex.h \
  /home/wjr/chat_home/src/server/../../include/public.hpp \
+ /home/wjr/chat_home/src/server/../../include/server/offlinemsg_model.hpp \
  /usr/local/include/muduo/base/Logging.h \
  /usr/local/include/muduo/base/LogStream.h
