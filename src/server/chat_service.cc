@@ -1,6 +1,7 @@
 #include "../../include/server/chat_service.hpp"
 #include "../../include/public.hpp"
 #include "../../include/server/user_model.hpp"
+#include "../../include/server/offlinemsg_model.hpp"
 #include <functional>
 #include <muduo/base/Logging.h>
 #include <jsoncpp/json/json.h>
@@ -29,7 +30,7 @@ ChatService::ChatService()
     // 注册函数
     msg_handler_set_.insert({LOG_MSG, std::bind(&ChatService::login, this, _1, _2, _3)});
     msg_handler_set_.insert({REGIS_MSG, std::bind(&ChatService::regis, this, _1, _2, _3)});
-    msg_handler_set_.insert({ONE_CHAT, std::bind(&ChatService::oneChat, this, _1, _2, _3)});
+    msg_handler_set_.insert({ONE_CHAT_MSG, std::bind(&ChatService::oneChat, this, _1, _2, _3)});
 }
 
 MsgHandler ChatService::getHandler(Msgid msg_id)
@@ -96,6 +97,16 @@ void ChatService::login(const TcpConnectionPtr &conn, Json::Value &message_value
                     result_value["id"] = id;
                     result_value["name"] = user.getName();
                     result_value["errno"] = 0;
+
+                    OfflineMsgModel offlinemsgmodel;
+                    vector<string> offline_msg_set = offlinemsgmodel.query(id);
+                    if (!offline_msg_set.empty())
+                    {
+                        for (auto &e : offline_msg_set)
+                        {
+                            result_value["offlinemsg"].append(e);
+                        }
+                    }
                 }
                 else
                 {
@@ -204,8 +215,11 @@ void ChatService::clientClose(const TcpConnectionPtr &conn)
 }
 
 /*
+msgid:5
 to:收信息的id
-
+from:发信息的用户名
+id:发信息的id
+msg:发的消息
 */
 void ChatService::oneChat(const TcpConnectionPtr &conn, Json::Value &message_value, Timestamp time)
 {
@@ -231,7 +245,17 @@ void ChatService::oneChat(const TcpConnectionPtr &conn, Json::Value &message_val
             }
         }
 
-        // 用户不在线
+        // 用户不在线 - 将消息放入数据库中
+        Json::FastWriter writer;
+        std::string out_json = writer.write(message_value);
+        OfflineMsgModel offlinemodel;
+        bool res = offlinemodel.insert(to_id, out_json);
+        if (res)
+            LOG_INFO << message_value["from"].asString() << " to " << to_id << "\'s offlinemessage save success.";
+        else
+        {
+            LOG_ERROR << message_value["from"].asString() << " to " << to_id << "\'s offlinemessage save failed.";
+        }
     }
     else
     {

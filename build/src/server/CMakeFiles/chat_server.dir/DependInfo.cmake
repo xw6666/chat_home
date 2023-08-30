@@ -12,6 +12,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/wjr/chat_home/src/server/chat_service.cc" "src/server/CMakeFiles/chat_server.dir/chat_service.cc.o" "gcc" "src/server/CMakeFiles/chat_server.dir/chat_service.cc.o.d"
   "/home/wjr/chat_home/src/server/db/db.cc" "src/server/CMakeFiles/chat_server.dir/db/db.cc.o" "gcc" "src/server/CMakeFiles/chat_server.dir/db/db.cc.o.d"
   "/home/wjr/chat_home/src/server/main.cc" "src/server/CMakeFiles/chat_server.dir/main.cc.o" "gcc" "src/server/CMakeFiles/chat_server.dir/main.cc.o.d"
+  "/home/wjr/chat_home/src/server/offlinemsg_model.cc" "src/server/CMakeFiles/chat_server.dir/offlinemsg_model.cc.o" "gcc" "src/server/CMakeFiles/chat_server.dir/offlinemsg_model.cc.o.d"
   "/home/wjr/chat_home/src/server/user_model.cc" "src/server/CMakeFiles/chat_server.dir/user_model.cc.o" "gcc" "src/server/CMakeFiles/chat_server.dir/user_model.cc.o.d"
   )
 
