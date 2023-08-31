@@ -11,4 +11,6 @@ public:
     void query(int id, User *user);
     // 将user中的state更新到user数据库表中
     bool updateState(const User &user);
+    // 将所有user中的状态修改为offline
+    bool resetState();
 };
