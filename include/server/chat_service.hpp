@@ -1,6 +1,8 @@
 #pragma once
 
 #include "./user_model.hpp"
+#include "./offlinemsg_model.hpp"
+#include "./groupmodel.hpp"
 #include <muduo/net/TcpServer.h>
 #include <functional>
 #include <jsoncpp/json/json.h>
@@ -32,16 +34,24 @@ private:
     void regis(const TcpConnectionPtr &conn, Json::Value &message_value, Timestamp time);
     // 负责处理点对点聊天的业务函数
     void oneChat(const TcpConnectionPtr &conn, Json::Value &message_value, Timestamp time);
+    // 负责创建群组的业务函数
+    void createGroup(const TcpConnectionPtr &conn, Json::Value &message_value, Timestamp time);
+    // 加入群组业务
+    void addGroup(const TcpConnectionPtr &conn, Json::Value &message_value, Timestamp time);
+    // 群组聊天业务
+    void groupChat(const TcpConnectionPtr &conn, Json::Value &message_value, Timestamp time);
     // 通过id可以调用需要处理的业务函数
     std::unordered_map<Msgid, MsgHandler> msg_handler_set_;
 
     // 通过user id找到对应的连接
     std::unordered_map<int, TcpConnectionPtr> user_conn_set_;
 
-    // 通过此类查询User数据库表
-    UserModel user_model_;
-
     std::mutex conn_mutex_;
+
+    // 数据操作类对象
+    UserModel userModel_;
+    OfflineMsgModel offlineMsgModel_;
+    GroupModel groupModel_;
 
     // 单例指针
     static ChatService *ins_;

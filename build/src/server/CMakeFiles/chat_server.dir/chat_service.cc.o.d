@@ -95,6 +95,16 @@ src/server/CMakeFiles/chat_server.dir/chat_service.cc.o: \
  /usr/include/asm-generic/errno-base.h \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/functional_hash.h \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/basic_string.tcc \
+ /home/wjr/chat_home/src/server/../../include/server/./offlinemsg_model.hpp \
+ /opt/rh/devtoolset-7/root/usr/include/c++/7/vector \
+ /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/stl_construct.h \
+ /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/stl_uninitialized.h \
+ /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/stl_vector.h \
+ /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/stl_bvector.h \
+ /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/vector.tcc \
+ /home/wjr/chat_home/src/server/../../include/server/./groupmodel.hpp \
+ /home/wjr/chat_home/src/server/../../include/server/././group.hpp \
+ /home/wjr/chat_home/src/server/../../include/server/./././groupuser.hpp \
  /usr/local/include/muduo/net/TcpServer.h \
  /usr/local/include/muduo/base/Atomic.h \
  /usr/local/include/muduo/base/noncopyable.h \
@@ -153,8 +163,6 @@ src/server/CMakeFiles/chat_server.dir/chat_service.cc.o: \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/std_function.h \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/refwrap.h \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/memory \
- /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/stl_construct.h \
- /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/stl_uninitialized.h \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/stl_tempbuf.h \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/stl_raw_storage_iter.h \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/ext/concurrence.h \
@@ -175,10 +183,6 @@ src/server/CMakeFiles/chat_server.dir/chat_service.cc.o: \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/stl_heap.h \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/uniform_int_dist.h \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/limits \
- /opt/rh/devtoolset-7/root/usr/include/c++/7/vector \
- /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/stl_vector.h \
- /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/stl_bvector.h \
- /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/vector.tcc \
  /usr/local/include/muduo/net/InetAddress.h /usr/include/netinet/in.h \
  /usr/include/sys/socket.h /usr/include/sys/uio.h /usr/include/bits/uio.h \
  /usr/include/bits/socket.h /usr/include/bits/socket_type.h \
@@ -275,6 +279,5 @@ src/server/CMakeFiles/chat_server.dir/chat_service.cc.o: \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/parse_numbers.h \
  /opt/rh/devtoolset-7/root/usr/include/c++/7/bits/std_mutex.h \
  /home/wjr/chat_home/src/server/../../include/public.hpp \
- /home/wjr/chat_home/src/server/../../include/server/offlinemsg_model.hpp \
  /usr/local/include/muduo/base/Logging.h \
  /usr/local/include/muduo/base/LogStream.h

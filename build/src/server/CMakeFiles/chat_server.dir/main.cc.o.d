@@ -257,6 +257,10 @@ src/server/CMakeFiles/chat_server.dir/main.cc.o: \
  /home/wjr/chat_home/include/server/chat_service.hpp \
  /home/wjr/chat_home/include/server/./user_model.hpp \
  /home/wjr/chat_home/include/server/./user.hpp \
+ /home/wjr/chat_home/include/server/./offlinemsg_model.hpp \
+ /home/wjr/chat_home/include/server/./groupmodel.hpp \
+ /home/wjr/chat_home/include/server/././group.hpp \
+ /home/wjr/chat_home/include/server/./././groupuser.hpp \
  /usr/include/jsoncpp/json/json.h /usr/include/jsoncpp/json/autolink.h \
  /usr/include/jsoncpp/json/config.h /usr/include/jsoncpp/json/value.h \
  /usr/include/jsoncpp/json/forwards.h /usr/include/jsoncpp/json/reader.h \

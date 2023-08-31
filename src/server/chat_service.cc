@@ -1,6 +1,7 @@
 #include "../../include/server/chat_service.hpp"
 #include "../../include/public.hpp"
 #include "../../include/server/user_model.hpp"
+#include "../../include/server/groupmodel.hpp"
 #include "../../include/server/offlinemsg_model.hpp"
 #include <functional>
 #include <muduo/base/Logging.h>
@@ -31,6 +32,9 @@ ChatService::ChatService()
     msg_handler_set_.insert({LOG_MSG, std::bind(&ChatService::login, this, _1, _2, _3)});
     msg_handler_set_.insert({REGIS_MSG, std::bind(&ChatService::regis, this, _1, _2, _3)});
     msg_handler_set_.insert({ONE_CHAT_MSG, std::bind(&ChatService::oneChat, this, _1, _2, _3)});
+    msg_handler_set_.insert({CREATE_GROUP_MSG, std::bind(&ChatService::createGroup, this, _1, _2, _3)});
+    msg_handler_set_.insert({ADD_GROUP_MSG, std::bind(&ChatService::addGroup, this, _1, _2, _3)});
+    msg_handler_set_.insert({GROUP_CHAT_MSG, std::bind(&ChatService::groupChat, this, _1, _2, _3)});
 }
 
 MsgHandler ChatService::getHandler(Msgid msg_id)
@@ -66,7 +70,7 @@ void ChatService::login(const TcpConnectionPtr &conn, Json::Value &message_value
         Json::FastWriter writer;
         result_value["msg_id"] = LOG_ACK;
         User user;
-        user_model_.query(id, &user);
+        userModel_.query(id, &user);
         if (user.getID() == -1)
         {
             // 查询失败
@@ -83,7 +87,7 @@ void ChatService::login(const TcpConnectionPtr &conn, Json::Value &message_value
             {
                 // 登录成功，将状态改为online
                 user.setState("online");
-                if (user_model_.updateState(user))
+                if (userModel_.updateState(user))
                 {
 
                     // 成功登录，将连接加入集合中(多线程场景)
@@ -166,7 +170,7 @@ void ChatService::regis(const TcpConnectionPtr &conn, Json::Value &message_value
         User user;
         user.setName(name);
         user.setPasswd(passwd); // UserModel user_model;
-        bool status = user_model_.insert(user);
+        bool status = userModel_.insert(user);
 
         if (status)
         {
@@ -210,7 +214,7 @@ void ChatService::clientClose(const TcpConnectionPtr &conn)
     }
     if (user.getID() != -1)
     {
-        user_model_.updateState(user);
+        userModel_.updateState(user);
     }
 }
 
@@ -227,7 +231,7 @@ void ChatService::oneChat(const TcpConnectionPtr &conn, Json::Value &message_val
     int to_id = message_value["to"].asInt();
     // 先查数据库看用户是否存在
     User user;
-    user_model_.query(to_id, &user);
+    userModel_.query(to_id, &user);
 
     if (user.getID() == to_id)
     {
@@ -248,8 +252,7 @@ void ChatService::oneChat(const TcpConnectionPtr &conn, Json::Value &message_val
         // 用户不在线 - 将消息放入数据库中
         Json::FastWriter writer;
         std::string out_json = writer.write(message_value);
-        OfflineMsgModel offlinemodel;
-        bool res = offlinemodel.insert(to_id, out_json);
+        bool res = offlineMsgModel_.insert(to_id, out_json);
         if (res)
             LOG_INFO << message_value["from"].asString() << " to " << to_id << "\'s offlinemessage save success.";
         else
@@ -257,22 +260,67 @@ void ChatService::oneChat(const TcpConnectionPtr &conn, Json::Value &message_val
             LOG_ERROR << message_value["from"].asString() << " to " << to_id << "\'s offlinemessage save failed.";
         }
     }
-    else
-    {
-        // 用户不存在
-        // Json::Value result_value; // 传给客户端的json value
-        // Json::FastWriter writer;
-    }
 }
 
 void ChatService::reset()
 {
     // 操作数据库，将所有用户状态修改为offline
-    UserModel user_model;
-    bool check = user_model.resetState();
+    bool check = userModel_.resetState();
     if (check)
     {
         LOG_INFO << "User state reset success.";
+    }
+}
+
+// 创建群组业务
+void ChatService::createGroup(const TcpConnectionPtr &conn, Json::Value &message_value, Timestamp time)
+{
+
+    int userid = message_value["id"].asInt();
+    string name = message_value["groupname"].asString();
+    string desc = message_value["groupdesc"].asString();
+
+    // 存储新创建的群组信息
+    Group group(-1, name, desc);
+    if (groupModel_.createGroup(group))
+    {
+        // 存储群组创建人信息
+        groupModel_.addGroup(userid, group.getId(), "creator");
+    }
+}
+
+void ChatService::addGroup(const TcpConnectionPtr &conn, Json::Value &message_value, Timestamp time)
+{
+    int userid = message_value["id"].asInt();
+    int groupid = message_value["groupid"].asInt();
+    groupModel_.addGroup(userid, groupid, "normal");
+}
+
+// 群组聊天业务
+void ChatService::groupChat(const TcpConnectionPtr &conn, Json::Value &message_value, Timestamp time)
+{
+    int userid = message_value["id"].asInt();
+    int groupid = message_value["groupid"].asInt();
+
+    vector<int> useridVec = groupModel_.queryGroupUsers(userid, groupid);
+    Json::FastWriter writer;
+    lock_guard<mutex> lock(conn_mutex_);
+    for (int id : useridVec)
+    {
+        auto it = user_conn_set_.find(id);
+        if (it != user_conn_set_.end())
+        {
+            // 转发群消息
+            string out_json = writer.write(message_value);
+            it->second->send(out_json);
+        }
+        else
+        {
+
+            // 存储离线群消息
+            string out_json = writer.write(message_value);
+            offlineMsgModel_.insert(id, out_json);
+        }
     }
 }
 

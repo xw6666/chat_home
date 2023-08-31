@@ -202,6 +202,30 @@ db/db.cc.s:
 	cd /home/wjr/chat_home/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/chat_server.dir/build.make src/server/CMakeFiles/chat_server.dir/db/db.cc.s
 .PHONY : db/db.cc.s
 
+groupmodel.o: groupmodel.cc.o
+.PHONY : groupmodel.o
+
+# target to build an object file
+groupmodel.cc.o:
+	cd /home/wjr/chat_home/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/chat_server.dir/build.make src/server/CMakeFiles/chat_server.dir/groupmodel.cc.o
+.PHONY : groupmodel.cc.o
+
+groupmodel.i: groupmodel.cc.i
+.PHONY : groupmodel.i
+
+# target to preprocess a source file
+groupmodel.cc.i:
+	cd /home/wjr/chat_home/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/chat_server.dir/build.make src/server/CMakeFiles/chat_server.dir/groupmodel.cc.i
+.PHONY : groupmodel.cc.i
+
+groupmodel.s: groupmodel.cc.s
+.PHONY : groupmodel.s
+
+# target to generate assembly for a file
+groupmodel.cc.s:
+	cd /home/wjr/chat_home/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/chat_server.dir/build.make src/server/CMakeFiles/chat_server.dir/groupmodel.cc.s
+.PHONY : groupmodel.cc.s
+
 main.o: main.cc.o
 .PHONY : main.o
 
@@ -292,6 +316,9 @@ help:
 	@echo "... db/db.o"
 	@echo "... db/db.i"
 	@echo "... db/db.s"
+	@echo "... groupmodel.o"
+	@echo "... groupmodel.i"
+	@echo "... groupmodel.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
