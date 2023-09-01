@@ -105,6 +105,7 @@ src/server/CMakeFiles/chat_server.dir/chat_service.cc.o: \
  /home/wjr/chat_home/src/server/../../include/server/./groupmodel.hpp \
  /home/wjr/chat_home/src/server/../../include/server/././group.hpp \
  /home/wjr/chat_home/src/server/../../include/server/./././groupuser.hpp \
+ /home/wjr/chat_home/src/server/../../include/server/./friendmodel.hpp \
  /usr/local/include/muduo/net/TcpServer.h \
  /usr/local/include/muduo/base/Atomic.h \
  /usr/local/include/muduo/base/noncopyable.h \

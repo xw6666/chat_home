@@ -261,6 +261,7 @@ src/server/CMakeFiles/chat_server.dir/chat_server.cc.o: \
  /home/wjr/chat_home/src/server/../../include/server/./groupmodel.hpp \
  /home/wjr/chat_home/src/server/../../include/server/././group.hpp \
  /home/wjr/chat_home/src/server/../../include/server/./././groupuser.hpp \
+ /home/wjr/chat_home/src/server/../../include/server/./friendmodel.hpp \
  /usr/include/jsoncpp/json/json.h /usr/include/jsoncpp/json/autolink.h \
  /usr/include/jsoncpp/json/config.h /usr/include/jsoncpp/json/value.h \
  /usr/include/jsoncpp/json/forwards.h /usr/include/jsoncpp/json/reader.h \

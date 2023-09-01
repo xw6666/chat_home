@@ -1,6 +1,8 @@
 #include "chat_server.hpp"
 #include "chat_service.hpp"
 #include <signal.h>
+#include <iostream>
+using namespace std;
 
 void handler(int signo)
 {
@@ -8,8 +10,19 @@ void handler(int signo)
     exit(0);
 }
 
-int main()
+void Usage(const std::string &str)
 {
+    cerr << "Usage:\n\t" << str << " [ip] "
+         << "[port] " << endl;
+    exit(-1);
+}
+
+int main(int argc, char **argv)
+{
+    if (argc != 3)
+    {
+        Usage(argv[0]);
+    }
 
     signal(SIGINT, handler);
     // sockaddr_in local;
