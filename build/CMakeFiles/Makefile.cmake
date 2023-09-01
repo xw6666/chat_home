@@ -12,6 +12,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.27.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.27.1/CMakeSystem.cmake"
   "/home/wjr/chat_home/src/CMakeLists.txt"
+  "/home/wjr/chat_home/src/client/CMakeLists.txt"
   "/home/wjr/chat_home/src/server/CMakeLists.txt"
   "/usr/local/cmake/share/cmake-3.27/Modules/CMakeCCompiler.cmake.in"
   "/usr/local/cmake/share/cmake-3.27/Modules/CMakeCCompilerABI.c"
@@ -124,9 +125,11 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/server/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/client/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "src/server/CMakeFiles/chat_server.dir/DependInfo.cmake"
+  "src/client/CMakeFiles/chat_client.dir/DependInfo.cmake"
   )

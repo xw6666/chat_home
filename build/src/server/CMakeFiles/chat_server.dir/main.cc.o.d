@@ -261,6 +261,7 @@ src/server/CMakeFiles/chat_server.dir/main.cc.o: \
  /home/wjr/chat_home/include/server/./groupmodel.hpp \
  /home/wjr/chat_home/include/server/././group.hpp \
  /home/wjr/chat_home/include/server/./././groupuser.hpp \
+ /home/wjr/chat_home/include/server/./friendmodel.hpp \
  /usr/include/jsoncpp/json/json.h /usr/include/jsoncpp/json/autolink.h \
  /usr/include/jsoncpp/json/config.h /usr/include/jsoncpp/json/value.h \
  /usr/include/jsoncpp/json/forwards.h /usr/include/jsoncpp/json/reader.h \
@@ -284,4 +285,5 @@ src/server/CMakeFiles/chat_server.dir/main.cc.o: \
  /usr/include/signal.h /usr/include/bits/signum.h \
  /usr/include/bits/siginfo.h /usr/include/bits/sigaction.h \
  /usr/include/bits/sigcontext.h /usr/include/bits/sigstack.h \
- /usr/include/sys/ucontext.h /usr/include/bits/sigthread.h
+ /usr/include/sys/ucontext.h /usr/include/bits/sigthread.h \
+ /opt/rh/devtoolset-7/root/usr/include/c++/7/iostream

@@ -35,6 +35,7 @@ ChatService::ChatService()
     msg_handler_set_.insert({CREATE_GROUP_MSG, std::bind(&ChatService::createGroup, this, _1, _2, _3)});
     msg_handler_set_.insert({ADD_GROUP_MSG, std::bind(&ChatService::addGroup, this, _1, _2, _3)});
     msg_handler_set_.insert({GROUP_CHAT_MSG, std::bind(&ChatService::groupChat, this, _1, _2, _3)});
+    msg_handler_set_.insert({ADD_FRIEND_MSG, std::bind(&ChatService::addFriend, this, _1, _2, _3)});
 }
 
 MsgHandler ChatService::getHandler(Msgid msg_id)
@@ -322,6 +323,20 @@ void ChatService::groupChat(const TcpConnectionPtr &conn, Json::Value &message_v
             offlineMsgModel_.insert(id, out_json);
         }
     }
+}
+
+/*
+msg_id
+id
+friendid
+*/
+void ChatService::addFriend(const TcpConnectionPtr &conn, Json::Value &message_value, Timestamp time)
+{
+    Json::FastWriter writer;
+    int user_id = message_value["id"].asInt();
+    int friend_id = message_value["friendid"].asInt();
+
+    friendModel_.insert(user_id, friend_id);
 }
 
 ChatService *ChatService::ins_ = nullptr;

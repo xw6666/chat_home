@@ -3,6 +3,7 @@
 #include "./user_model.hpp"
 #include "./offlinemsg_model.hpp"
 #include "./groupmodel.hpp"
+#include "./friendmodel.hpp"
 #include <muduo/net/TcpServer.h>
 #include <functional>
 #include <jsoncpp/json/json.h>
@@ -40,6 +41,8 @@ private:
     void addGroup(const TcpConnectionPtr &conn, Json::Value &message_value, Timestamp time);
     // 群组聊天业务
     void groupChat(const TcpConnectionPtr &conn, Json::Value &message_value, Timestamp time);
+    // 添加好友业务
+    void addFriend(const TcpConnectionPtr &conn, Json::Value &message_value, Timestamp time);
     // 通过id可以调用需要处理的业务函数
     std::unordered_map<Msgid, MsgHandler> msg_handler_set_;
 
@@ -52,6 +55,7 @@ private:
     UserModel userModel_;
     OfflineMsgModel offlineMsgModel_;
     GroupModel groupModel_;
+    FriendModel friendModel_;
 
     // 单例指针
     static ChatService *ins_;
